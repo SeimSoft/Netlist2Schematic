@@ -1,0 +1,47 @@
+[project]
+name = "netlist2schematic"
+version = "0.1.0"
+description = "Readable schematic proposals from Xyce netlists, with an MLX placement policy trained on manual corrections"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "SeimSoft" }]
+keywords = ["schematic", "netlist", "xyce", "spice", "eda", "placement", "reinforcement-learning", "mlx", "kicad"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Manufacturing",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.15"
+dependencies = [
+    "mlx>=0.31.0",
+    "numpy>=2.5.4",
+    "pyyaml>=6.0.3",
+    "jinja2>=3.1.6",
+    "pyside6>=6.12.0",
+    "qtawesome>=1.4.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.1.1"]
+
+[project.urls]
+Homepage = "https://github.com/SeimSoft/Netlist2Schematic"
+Repository = "https://github.com/SeimSoft/Netlist2Schematic"
+Issues = "https://github.com/SeimSoft/Netlist2Schematic/issues"
+
+[project.scripts]
+n2s = "netlist2schematic.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+addopts = "--import-mode=importlib"

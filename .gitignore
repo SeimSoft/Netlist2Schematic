@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+
+# Training database, model weights and render caches (local, may contain private netlists)
+data/
+
+# Generated experiment output
+reports/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
